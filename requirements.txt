@@ -1,0 +1,9 @@
+# No external dependencies required
+# This application uses only Python standard library modules:
+# - tkinter (GUI)
+# - json (data handling)  
+# - random (text selection)
+# - time (timing)
+# - threading (timer)
+# - datetime (timestamps)
+# - os (file operations)
