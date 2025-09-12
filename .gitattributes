@@ -1,2 +1,7 @@
-# Auto detect text files and perform LF normalization
+# Ensure consistent line endings in text files
 * text=auto
+
+# Force LF on all Python scripts and text files
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
