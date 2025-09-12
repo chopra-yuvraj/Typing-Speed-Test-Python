@@ -43,15 +43,12 @@ As a B.Tech CSE student at VIT and B.S. Data Science student at IIT Madras, I sp
 ### Installation
 
 **Step 1: Clone the repository**
-```
-git clone https://github.com/chopra-yuvraj/Typing-Speed-Test-Python.git
-cd Typing-Speed-Test-Python
-```
+
+([clone] (https://github.com/chopra-yuvraj/Typing-Speed-Test-Python.git))
 
 **Step 2: Run the application**
-```
-python advanced_typing_speed_test.py
-```
+
+advanced_typing_speed_test.py
 
 **Step 3: Start typing!**
 - Choose your test mode (Complete Text or Timed)
@@ -349,7 +346,7 @@ Special recognition to:
 </div>
 ```
 
-## 🔗 Direct Copy-Paste Links for Your Repository
+## 🔗 Direct Links for The Repository
 
 `Typing-Speed-Test-Python` repository:
 
