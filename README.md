@@ -22,11 +22,11 @@ Also, my friends and I compete with each other in our typing Speeds.
   - Visual Feedback - Colour-coded highlighting for correct/incorrect/current text  
   - Progress History - Track your improvement over time with detailed statistics  
 ---
+
 ### Prerequisites
 - Python 3.6 or higher ([Download here](https://python.org/downloads/))
 - No additional packages required (pure Python standard library!)
 - 5 minutes of your time
-
 
 ### Test Modes
 
@@ -47,76 +47,26 @@ Also, my friends and I compete with each other in our typing Speeds.
 - **JSON Format**: Complete data with all metrics for advanced analysis
 - **CSV Format**: Spreadsheet-compatible for charts and graphs
 - **Statistical Summary**: Average performance and best results
-
----
-##  Contributing
-
-I welcome contributions from fellow developers and students!
-
-###  Bug Reports
-- Use [GitHub Issues](https://github.com/chopra-yuvraj/Typing-Speed-Test-Python/issues)
-- Include Python version and OS
-- Describe steps to reproduce
-- Attach screenshots if relevant
-
-###  Feature Ideas
-- New text categories or topics
-- Additional statistical metrics
-- UI/UX improvements
-- Performance enhancements
-
-### 🔧 Code Contributions
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes and test thoroughly
-4. Commit with descriptive messages (`git commit -m 'Add amazing feature'`)
-5. Push to your branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request with detailed description
-
----
-
-## 📊 Project Statistics
-
-- 📝 **Lines of Code**: ~800 (including documentation)
-- 📚 **Text Content**: 30+ unique 200-word passages (6,000+ words total)
-- ⏱️ **Startup Time**: <1 second
-- 🎯 **Features**: 15+ distinct capabilities
-- 💾 **Memory Usage**: <50MB typical
-- 🌍 **Platforms**: Windows, macOS, Linux
-- 🔗 **Dependencies**: 0 (pure Python standard library)
-
 ---
 
 ## 🔮 Future Enhancements
 
 Ideas for future versions (while maintaining simplicity):
 
-- [ ] **Multi-Language Support** - Texts in different languages
-- [ ] **Difficulty Levels** - Beginner to advanced text complexity
-- [ ] **Typing Games** - Gamified practice modes
-- [ ] **Sound Effects** - Audio feedback for errors and completion
-- [ ] **Themes** - Dark/light mode and color customization
-- [ ] **Network Features** - Compare scores with friends (optional)
-- [ ] **Mobile Version** - Touch typing for tablets
-
-*All features will maintain the core educational focus and ease of use*
+- [ ] **Multi-Language Support**
+- [ ] **Difficulty Levels**]
+- [ ] **Audio feedback for errors and completion**
+- [ ] **Dark/light Themes**
+- [ ] **Network Features** - Compare scores with friends
+- [ ] **Mobile Version**
 
 ---
-
 ## 📜 License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for full details.
-
-**What this means:**
-- ✅ Use commercially and personally
-- ✅ Modify and distribute freely
-- ✅ Include in other projects
-- ✅ No warranty or liability
-- ℹ️ Include original license notice
-
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 Special recognition to:
 - **My professors at VIT Vellore** for emphasizing practical software development
@@ -124,28 +74,20 @@ Special recognition to:
 - **My classmates** who tested early versions and provided valuable feedback
 - **The Python community** for creating such accessible and powerful tools
 - **Educational content creators** whose work inspired the diverse text topics
-- **Open-source contributors** who demonstrate the power of collaborative development
-
 ---
 
-## 👨‍💻 About the Developer
+## About the Developer
 
 **Yuvraj Chopra**  
-🎓 B.Tech Computer Science Engineering - VIT Vellore (CGPA: 9.12)  
-🎓 B.S. Data Science - IIT Madras  
-📍 Vellore, Tamil Nadu, India  
-🆔 Student ID: 24BCE2025
+ B.Tech Computer Science Engineering - VIT Vellore  
+ B.S. Data Science - IIT Madras  
+ Vellore, Tamil Nadu, India
 
-*Passionate about creating educational tools that make learning engaging and accessible. Currently exploring the intersection of software engineering, data science, and educational technology.*
+*Passionate about building simple, effective solutions to everyday problems. 
+Currently exploring the intersection of software engineering and data science.*
 
-### 🚀 Current Focus Areas
-- 🤖 Machine Learning applications in education
-- 💻 Clean, maintainable software architecture
-- 📊 Data-driven insights for learning optimization
-- 🎯 Productivity tools for students and professionals
-- 🌐 Open-source educational software development
 
-### 🔗 Connect With Me
+### Connect With Me
 
 [![GitHub](https://img.shields.io/badge/GitHub-chopra--yuvraj-181717?style=for-the-badge&logo=github)](https://github.com/chopra-yuvraj)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-chopra--yuvraj-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/chopra-yuvraj)
@@ -155,33 +97,8 @@ Special recognition to:
 
 <div align="center">
 
-## ⭐ Star this repository if it helped improve your typing skills!
+**Made with ❤️ and ☕ by Yuvraj Chopra**
 
-### 🎯 Ready to become a typing master while learning something new?
-
-**[📥 Download Now](https://github.com/chopra-yuvraj/Typing-Speed-Test-Python/archive/main.zip)** • **[🚀 View Source](https://github.com/chopra-yuvraj/Typing-Speed-Test-Python)** • **[📊 Try Demo](https://github.com/chopra-yuvraj/Typing-Speed-Test-Python#quick-start)**
-
----
-
-*"Education is the most powerful weapon which you can use to change the world." - Nelson Mandela*
-
-**Made with 💖 and 🐍 by Yuvraj Chopra**
-
-**Built for students, by a student. Empowering learners everywhere. 🌟**
+[ **View on GitHub**](https://github.com/chopra-yuvraj/Typing-Speed-Test-Python)
 
 </div>
-```
-
-## 🔗 Direct Links for The Repository
-
-`Typing-Speed-Test-Python` repository:
-
-**Main Repository:** `https://github.com/chopra-yuvraj/Typing-Speed-Test-Python`
-
-**Clone Command:** `git clone https://github.com/chopra-yuvraj/Typing-Speed-Test-Python.git`
-
-**Issues Page:** `https://github.com/chopra-yuvraj/Typing-Speed-Test-Python/issues`
-
-**Download ZIP:** `https://github.com/chopra-yuvraj/Typing-Speed-Test-Python/archive/main.zip`
-
-**Quick Start Link:** `https://github.com/chopra-yuvraj/Typing-Speed-Test-Python#quick-start`
