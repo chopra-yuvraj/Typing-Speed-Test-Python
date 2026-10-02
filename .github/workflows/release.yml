@@ -1,0 +1,106 @@
+# Release pipeline.
+#
+# How to cut a release (zero extra tooling):
+#   1. Bump __version__ in typingtest/__init__.py and update CHANGELOG.md
+#   2. Commit, then:  git tag v2.0.0 && git push origin v2.0.0
+#   3. This workflow runs the tests, builds the Windows .exe with
+#      PyInstaller, and publishes a GitHub Release with the executable,
+#      its SHA-256 checksum, and auto-generated release notes.
+#
+# Can also be triggered manually from the Actions tab (builds + uploads
+# artifacts only, without creating a GitHub Release).
+
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write  # needed to publish GitHub Releases
+
+jobs:
+  verify:
+    name: Test & version check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+      - name: Lint with flake8
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Run test suite
+        run: python -m pytest
+      - name: Tag must match package version
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          VERSION=$(python -c "from typingtest import __version__; print(__version__)")
+          TAG="${GITHUB_REF_NAME#v}"
+          echo "tag=$TAG package=$VERSION"
+          test "$VERSION" = "$TAG" || { echo "::error::Tag v$TAG does not match __version__ $VERSION"; exit 1; }
+
+  build-windows:
+    name: Build Windows executable
+    needs: verify
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install build tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller
+      - name: Build executable with PyInstaller
+        run: |
+          pyinstaller --noconfirm --clean --onefile --windowed `
+            --name TypingSpeedTest `
+            --add-data "typingtest/data;typingtest/data" `
+            typing_speed_test.py
+      - name: Verify version flag of frozen app
+        run: |
+          python -c "import pathlib; assert pathlib.Path('dist/TypingSpeedTest.exe').stat().st_size > 5_000_000, 'exe suspiciously small'"
+      - name: Smoke test the executable
+        shell: pwsh
+        run: |
+          $p = Start-Process -FilePath ".\dist\TypingSpeedTest.exe" -PassThru
+          Start-Sleep -Seconds 8
+          if ($p.HasExited) { Write-Error "Executable exited immediately"; exit 1 }
+          Stop-Process -Id $p.Id -Force
+          Write-Output "Executable launched successfully"
+      - name: Generate SHA-256 checksum
+        shell: pwsh
+        run: |
+          $hash = (Get-FileHash ".\dist\TypingSpeedTest.exe" -Algorithm SHA256).Hash.ToLower()
+          "$hash  TypingSpeedTest.exe" | Out-File -FilePath ".\dist\TypingSpeedTest.exe.sha256.txt" -Encoding ascii -NoNewline
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: TypingSpeedTest-windows
+          path: |
+            dist/TypingSpeedTest.exe
+            dist/TypingSpeedTest.exe.sha256.txt
+          retention-days: 30
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/TypingSpeedTest.exe
+            dist/TypingSpeedTest.exe.sha256.txt
+          generate_release_notes: true
+          draft: false
+          prerelease: ${{ contains(github.ref_name, '-') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussions
+    url: https://github.com/chopra-yuvraj/Typing-Speed-Test-Python/discussions
+    about: Questions, ideas and general chat — not a bug or feature? Start here.
+  - name: 📖 README & Docs
+    url: https://github.com/chopra-yuvraj/Typing-Speed-Test-Python#readme
+    about: Check the README first — it covers setup, shortcuts and FAQ.

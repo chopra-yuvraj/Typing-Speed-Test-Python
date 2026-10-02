@@ -1,9 +1,4 @@
-# No external dependencies required
-# This application uses only Python standard library modules:
-# - tkinter (GUI)
-# - json (data handling)  
-# - random (text selection)
-# - time (timing)
-# - threading (timer)
-# - datetime (timestamps)
-# - os (file operations)
+# Runtime: no external dependencies — the app only uses the Python standard
+# library (tkinter, json, threading, datetime, pathlib, ...).
+#
+# Development dependencies (lint + tests) live in requirements-dev.txt.

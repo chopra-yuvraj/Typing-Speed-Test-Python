@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "typing-speed-test"
+version = "2.0.0"
+description = "A feature-rich, dependency-free typing speed test with themes, stats dashboard, achievements and code practice mode."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Yuvraj Chopra", email = "yuvrajchopra19@gmail.com" }]
+keywords = ["typing", "wpm", "typing-test", "tkinter", "education"]
+requires-python = ">=3.9"
+dependencies = []
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Win32 (MS Windows)",
+    "Environment :: X11 Applications",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Education :: Testing",
+    "Topic :: Text Processing",
+]
+
+[project.urls]
+Homepage = "https://github.com/chopra-yuvraj/Typing-Speed-Test-Python"
+Issues = "https://github.com/chopra-yuvraj/Typing-Speed-Test-Python/issues"
+
+[project.scripts]
+typing-speed-test = "typingtest.app:main"
+
+[tool.setuptools]
+packages = ["typingtest"]
+
+[tool.setuptools.package-data]
+typingtest = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = ["E203", "W503"]
+exclude = [".git", ".venv", "build", "dist"]
