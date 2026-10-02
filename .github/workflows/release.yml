@@ -85,7 +85,7 @@ jobs:
           $hash = (Get-FileHash ".\dist\TypingSpeedTest.exe" -Algorithm SHA256).Hash.ToLower()
           "$hash  TypingSpeedTest.exe" | Out-File -FilePath ".\dist\TypingSpeedTest.exe.sha256.txt" -Encoding ascii -NoNewline
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: TypingSpeedTest-windows
           path: |
